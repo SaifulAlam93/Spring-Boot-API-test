@@ -47,8 +47,8 @@ public class Sales_OrderServiceImpl implements Sales_orderService {
     public Response getAll() {
         List<Sales_order> toDoList = sales_order_repository.findAllByActiveTrue();
         List<Sales_orderDto> responseDtos = new ArrayList<>();
-        toDoList.forEach(course -> {
-            Sales_orderDto sales_orderDto = modelMapper.map(course, Sales_orderDto.class);
+        toDoList.forEach(sales_order -> {
+            Sales_orderDto sales_orderDto = modelMapper.map(sales_order, Sales_orderDto.class);
             responseDtos.add(sales_orderDto);
         });
 

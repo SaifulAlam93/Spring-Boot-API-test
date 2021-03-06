@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -19,10 +20,15 @@ public class Sales_order extends BaseModel {
 //    @JoinColumn(name = "id", referencedColumnName = "id")
 //    private Products products;
 
-    @ManyToOne(fetch = FetchType.LAZY,
-            cascade =  CascadeType.ALL
-            )
+
+
+    @ManyToOne
+    @JoinColumn(name="PRODUCT_ID",referencedColumnName = "id")
     private Products products;
+
+
+
+
 
     public Sales_order() {
     }
